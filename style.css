@@ -12,7 +12,6 @@ textarea {
   border-left: 1px solid black;
   padding: 10px;
   width: 700px;
-  height: 50px;
   text-align: center;
   background-color: antiquewhite;
 }
@@ -31,9 +30,8 @@ textarea {
 
 .time-block {
   text-align: center;
-  border-radius: 15px;
   width: 70px;
-  height: 50px;
+  border-top: 1px solid black;
 }
 
 .row {
@@ -70,7 +68,6 @@ textarea {
   background-color: #06aed5;
   color: white;
   width: 70px;
-  height: 50px;
 }
 
 .saveBtn i:hover {
@@ -83,6 +80,7 @@ textarea {
   display: flex;
   justify-content: center;
   margin: 2px;
+  height: 70px;
 }
 
 #cont1 {
