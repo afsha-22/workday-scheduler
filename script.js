@@ -16,18 +16,29 @@ var tasks = {
     "17": []
 };
 
+var getItemFromSet = JSON.parse(localStorage.getItem('tasks'))
+console.log(getItemFromSet)
+
+if(getItemFromSet) {
+    tasks = getItemFromSet
+    $.each(tasks, function(index, values) {
+        var i=index-9;
+        $(textboxEl[i]).val(values)
+    })
+}
+
 var displayDate = moment().format("dddd, MMMM Do")
 dateEl.text(displayDate)
 
 var currentTime = moment().format("HH")
 for(i=0; i<timeEl.length; i++){
-    if(timeEl[i].dataset.hour === Number(currentTime)){
+    if(timeEl[i].dataset.hour == Number(currentTime)){
         textboxEl[i].className = "present"
     }
-    if(timeEl[i].dataset.hour < Number(currentTime)){
+    else if(timeEl[i].dataset.hour < Number(currentTime)){
         textboxEl[i].className = "past"
     }
-    if(timeEl[i].dataset.hour > Number(currentTime)){
+    else if (timeEl[i].dataset.hour > Number(currentTime)){
         textboxEl[i].className = "future"
     }
 }
